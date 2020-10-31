@@ -1,6 +1,7 @@
 package com.example.jasonweather.logic
 
 import androidx.lifecycle.liveData
+import com.example.jasonweather.logic.dao.PlaceDao
 import com.example.jasonweather.logic.model.Place
 import com.example.jasonweather.logic.model.Weather
 import com.example.jasonweather.logic.network.JasonWeatherNetwork
@@ -56,4 +57,10 @@ object Repository {
             }
             emit(result)
         }
+
+    fun savePlace(place:Place)=PlaceDao.savePlace(place)
+
+    fun getSavedPlace()=PlaceDao.getSavedPlace()
+
+    fun isPlaceSaved()=PlaceDao.isPlaceSaved()
 }
